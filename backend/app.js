@@ -10,16 +10,16 @@ require("dotenv").config();
 
 
 const app = express();
-app.use(express.json());        // ✅ MOST IMPORTANT
-app.use(express.urlencoded({ extended: true }));
+
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://your-frontend.vercel.app",
-    "https://your-admin.vercel.app"
+    "https://ecommerce-frontend-8qb7.onrender.com"
   ],
   credentials: true
 }));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());        // ✅ MOST IMPORTANT
 
 
 // Database Connection with MongoDB 
